@@ -1,0 +1,12 @@
+out/
+
+.repo/
+
+.ccache/
+
+*.log
+
+.vscode/
+.idea/
+
+*.tmp
