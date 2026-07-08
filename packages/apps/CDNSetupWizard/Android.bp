@@ -1,0 +1,53 @@
+android_app {
+    name: "CDNSetupWizard",
+
+    srcs: [
+        "src/**/*.kt",
+    ],
+
+    resource_dirs: [
+        "res",
+    ],
+
+    manifest: "AndroidManifest.xml",
+
+    // platform_apis: true è necessario per usare API interne non-SDK:
+    // - Settings.Secure.USER_SETUP_COMPLETE
+    // - Settings.Global.DEVICE_PROVISIONED
+    // - AlarmManager.setTimeZone()
+    // - InputMethodManager.getInputMethodList()
+    platform_apis: true,
+
+    // System app privilegiata su partizione /system_ext per rispettare artifact path requirements e consentire platform_apis
+    certificate: "platform",
+    privileged: true,
+    system_ext_specific: true,
+
+    static_libs: [
+        "androidx.core_core-ktx",
+        "androidx.appcompat_appcompat",
+        "androidx.fragment_fragment-ktx",
+        "androidx.viewpager2_viewpager2",
+        "androidx.recyclerview_recyclerview",
+        "androidx-constraintlayout_constraintlayout",
+        "com.google.android.material_material",
+        "androidx.lifecycle_lifecycle-viewmodel-ktx",
+        "androidx.lifecycle_lifecycle-livedata-ktx",
+    ],
+
+    optimize: {
+        enabled: false,
+    },
+
+    // Necessario per le annotazioni Kotlin
+    kotlincflags: ["-Xjvm-default=all"],
+}
+
+// Copia la whitelist dei permessi privilegiati in /system_ext/etc/permissions/
+prebuilt_etc {
+    name: "privapp-permissions-CDNSetupWizard",
+    src: "privapp-permissions-CDNSetupWizard.xml",
+    sub_dir: "permissions",
+    filename_from_src: true,
+    system_ext_specific: true,
+}

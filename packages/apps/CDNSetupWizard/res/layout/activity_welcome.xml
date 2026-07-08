@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_welcome.xml — Layout placeholder dello scheletro originale.
+    Non viene usato dal wizard. Il layout attivo è activity_setup_wizard.xml.
+    Mantenuto per evitare errori di merge con lo scheletro originale.
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary" />

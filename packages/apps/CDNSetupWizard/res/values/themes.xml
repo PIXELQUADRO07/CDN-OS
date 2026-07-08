@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Theme base: fullscreen, dark, nessuna action bar.
+        Usiamo MaterialComponents come parent perché SwitchMaterial
+        e i widget Material richiedono un tema MaterialComponents.
+    -->
+    <style name="Theme.CDNSetupWizard" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <!-- Colori Material -->
+        <item name="colorPrimary">@color/accent_primary</item>
+        <item name="colorPrimaryVariant">@color/accent_primary_dark</item>
+        <item name="colorSecondary">@color/accent_secondary</item>
+        <item name="colorSurface">@color/background_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnPrimary">@color/text_primary</item>
+        <!-- Testo -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <!-- Switch -->
+        <item name="colorAccent">@color/accent_primary</item>
+    </style>
+
+    <!-- Dialog tema -->
+    <style name="Theme.CDNSetupWizard.Dialog" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+        <item name="colorPrimary">@color/accent_primary</item>
+        <item name="colorSurface">@color/background_card_elevated</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+    </style>
+
+    <!-- Bottone primario (usato come sfondo via android:background) -->
+    <style name="Widget.CDNSetupWizard.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/bg_button_primary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:paddingStart">32dp</item>
+        <item name="android:paddingEnd">32dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:minHeight">56dp</item>
+    </style>
+
+    <!-- Bottone secondario -->
+    <style name="Widget.CDNSetupWizard.Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:background">@drawable/bg_button_secondary</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:minHeight">44dp</item>
+    </style>
+
+    <!-- Stile base TextAppearance per evitare errori aapt2 di parent non trovato -->
+    <style name="TextAppearance.CDNSetupWizard" parent="android:TextAppearance">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Titolo pagina -->
+    <style name="TextAppearance.CDNSetupWizard.PageTitle">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <!-- Sottotitolo pagina -->
+    <style name="TextAppearance.CDNSetupWizard.PageSubtitle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <!-- Label sezione -->
+    <style name="TextAppearance.CDNSetupWizard.SectionLabel">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/accent_primary</item>
+        <item name="android:letterSpacing">0.12</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

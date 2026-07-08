@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_primary"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="32dp"
+        android:paddingBottom="100dp">
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/tv_page_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="02 / 09"
+            style="@style/TextAppearance.CDNSetupWizard.SectionLabel"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/region_title"
+            style="@style/TextAppearance.CDNSetupWizard.PageTitle"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/region_subtitle"
+            style="@style/TextAppearance.CDNSetupWizard.PageSubtitle"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Lingua -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/region_language"
+            android:textColor="@color/text_secondary" android:textSize="13sp"
+            android:layout_marginBottom="6dp" />
+        <Spinner
+            android:id="@+id/spinner_language"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_card"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:popupBackground="@drawable/bg_dialog"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Regione -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/region_region"
+            android:textColor="@color/text_secondary" android:textSize="13sp"
+            android:layout_marginBottom="6dp" />
+        <Spinner
+            android:id="@+id/spinner_region"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_card"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:popupBackground="@drawable/bg_dialog"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Tastiera -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/region_keyboard"
+            android:textColor="@color/text_secondary" android:textSize="13sp"
+            android:layout_marginBottom="6dp" />
+        <Spinner
+            android:id="@+id/spinner_keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_card"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:popupBackground="@drawable/bg_dialog"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Fuso orario -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/region_timezone"
+            android:textColor="@color/text_secondary" android:textSize="13sp"
+            android:layout_marginBottom="6dp" />
+        <Spinner
+            android:id="@+id/spinner_timezone"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_card"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:popupBackground="@drawable/bg_dialog"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Formato data -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/region_date_format"
+            android:textColor="@color/text_secondary" android:textSize="13sp"
+            android:layout_marginBottom="6dp" />
+        <Spinner
+            android:id="@+id/spinner_date_format"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_card"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:popupBackground="@drawable/bg_dialog"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Formato ora -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/region_time_format"
+            android:textColor="@color/text_secondary" android:textSize="13sp"
+            android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioGroup
+                android:id="@+id/rg_time_format"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_24h"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:text="@string/region_time_24h"
+                    android:textColor="@color/text_primary"
+                    android:background="@drawable/bg_card"
+                    android:paddingStart="16dp"
+                    android:gravity="center_vertical"
+                    android:buttonTint="@color/accent_primary"
+                    android:layout_marginEnd="8dp"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/rb_12h"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:text="@string/region_time_12h"
+                    android:textColor="@color/text_primary"
+                    android:background="@drawable/bg_card"
+                    android:paddingStart="16dp"
+                    android:gravity="center_vertical"
+                    android:buttonTint="@color/accent_primary" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Unità di misura -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/region_units"
+            android:textColor="@color/text_secondary" android:textSize="13sp"
+            android:layout_marginBottom="6dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_units"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="32dp">
+
+            <RadioButton
+                android:id="@+id/rb_metric"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="@string/region_units_metric"
+                android:textColor="@color/text_primary"
+                android:background="@drawable/bg_card"
+                android:paddingStart="16dp"
+                android:gravity="center_vertical"
+                android:buttonTint="@color/accent_primary"
+                android:layout_marginEnd="8dp"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rb_imperial"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="@string/region_units_imperial"
+                android:textColor="@color/text_primary"
+                android:background="@drawable/bg_card"
+                android:paddingStart="16dp"
+                android:gravity="center_vertical"
+                android:buttonTint="@color/accent_primary" />
+
+        </RadioGroup>
+
+        <!-- Bottone avanti -->
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/btn_next"
+            android:background="@drawable/bg_button_primary"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

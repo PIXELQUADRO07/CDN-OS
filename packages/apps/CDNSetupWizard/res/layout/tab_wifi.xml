@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout del tab Wi-Fi interno al NetworkFragment -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="16dp">
+
+    <!-- Stato scansione -->
+    <TextView
+        android:id="@+id/tv_wifi_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/network_scanning"
+        android:textColor="@color/text_hint"
+        android:textSize="13sp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="8dp" />
+
+    <!-- Lista reti Wi-Fi -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_wifi_networks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:clipToPadding="false" />
+
+</LinearLayout>

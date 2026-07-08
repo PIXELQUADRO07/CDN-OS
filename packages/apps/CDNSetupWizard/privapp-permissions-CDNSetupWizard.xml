@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Whitelist dei permessi privilegiati per CDNSetupWizard.
+
+    In AOSP, le system app in /system/priv-app che usano permessi con
+    protectionLevel="privileged" DEVONO essere dichiarate in un file
+    privapp-permissions-*.xml. Senza questo file, le permission vengono
+    negate anche se l'app è privilegiata.
+
+    Percorso di destinazione nel sistema:
+      /system/etc/permissions/privapp-permissions-CDNSetupWizard.xml
+
+    Aggiungere al Android.bp (o PRODUCT_COPY_FILES nel Makefile):
+      PRODUCT_COPY_FILES += \
+          packages/apps/CDNSetupWizard/privapp-permissions-CDNSetupWizard.xml:system/etc/permissions/privapp-permissions-CDNSetupWizard.xml
+-->
+<permissions>
+    <privapp-permissions package="cdnos.setupwizard">
+        <!-- Impostazioni di sistema -->
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+        <permission name="android.permission.WRITE_GLOBAL_SETTINGS" />
+        <permission name="android.permission.CHANGE_CONFIGURATION" />
+        <permission name="android.permission.SET_TIME_ZONE" />
+
+        <!-- Rete -->
+        <permission name="android.permission.NETWORK_SETTINGS" />
+        <permission name="android.permission.OVERRIDE_WIFI_CONFIG" />
+        <permission name="android.permission.CHANGE_NETWORK_STATE" />
+
+        <!-- Telefonia -->
+        <permission name="android.permission.MODIFY_PHONE_STATE" />
+
+        <!-- Lockscreen -->
+        <permission name="android.permission.DISABLE_KEYGUARD" />
+
+        <!-- Task -->
+        <permission name="android.permission.REORDER_TASKS" />
+    </privapp-permissions>
+</permissions>
