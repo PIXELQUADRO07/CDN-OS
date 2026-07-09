@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Background principale — quasi nero con tinta viola -->
-    <color name="background_primary">#0A0A12</color>
-    <color name="background_secondary">#12121E</color>
-    <color name="background_card">#1A1A2E</color>
-    <color name="background_card_elevated">#1F1F35</color>
+    <!-- Background principale — nero OLED -->
+    <color name="background_primary">#000000</color>
+    <color name="background_secondary">#000000</color>
+    <color name="background_card">#121212</color>
+    <color name="background_card_elevated">#1C1C1E</color>
 
-    <!-- Accenti -->
-    <color name="accent_primary">#7C4DFF</color>
-    <color name="accent_primary_dark">#5C33CC</color>
-    <color name="accent_primary_light">#9D6FFF</color>
-    <color name="accent_secondary">#00E5FF</color>
-    <color name="accent_secondary_dark">#00B8CC</color>
+    <!-- Accenti Rosso OLED -->
+    <color name="accent_primary">#FF3B30</color>
+    <color name="accent_primary_dark">#B30000</color>
+    <color name="accent_primary_light">#FF6666</color>
+    <color name="accent_secondary">#FF3B30</color>
+    <color name="accent_secondary_dark">#990000</color>
 
     <!-- Gradiente logo -->
-    <color name="gradient_start">#7C4DFF</color>
-    <color name="gradient_end">#00E5FF</color>
+    <color name="gradient_start">#FF3B30</color>
+    <color name="gradient_end">#000000</color>
 
     <!-- Testo -->
     <color name="text_primary">#FFFFFF</color>
-    <color name="text_secondary">#B0B0CC</color>
-    <color name="text_hint">#606080</color>
-    <color name="text_disabled">#404060</color>
+    <color name="text_secondary">#EBEBF5</color>
+    <color name="text_hint">#8E8E93</color>
+    <color name="text_disabled">#48484A</color>
 
     <!-- Elementi UI -->
-    <color name="divider">#2A2A40</color>
-    <color name="ripple">#3D7C4DFF</color>
+    <color name="divider">#2C2C2E</color>
+    <color name="ripple">#3DFF3B30</color>
     <color name="overlay_scrim">#80000000</color>
 
     <!-- Stato rete -->
@@ -34,16 +34,16 @@
     <color name="wifi_poor">#F44336</color>
 
     <!-- Chip selezionato -->
-    <color name="chip_selected_bg">#3D7C4DFF</color>
-    <color name="chip_selected_border">#7C4DFF</color>
-    <color name="chip_unselected_bg">#1A1A2E</color>
-    <color name="chip_unselected_border">#2A2A40</color>
+    <color name="chip_selected_bg">#3DFF3B30</color>
+    <color name="chip_selected_border">#FF3B30</color>
+    <color name="chip_unselected_bg">#121212</color>
+    <color name="chip_unselected_border">#2C2C2E</color>
 
     <!-- Progress -->
-    <color name="progress_track">#2A2A40</color>
-    <color name="progress_indicator">#7C4DFF</color>
+    <color name="progress_track">#2C2C2E</color>
+    <color name="progress_indicator">#FF3B30</color>
 
     <!-- Finestra -->
-    <color name="window_background">#0A0A12</color>
+    <color name="window_background">#000000</color>
     <color name="status_bar">#00000000</color>
 </resources>

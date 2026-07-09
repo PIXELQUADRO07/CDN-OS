@@ -1,0 +1,73 @@
+// Copyright (C) 2026 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package {
+    default_applicable_licenses: [
+        "external_google-fonts_inter_license",
+    ],
+}
+
+license {
+    name: "external_google-fonts_inter_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-OFL",
+    ],
+    license_text: [
+        "NOTICE",
+    ],
+}
+
+prebuilt_font {
+    name: "Inter-Regular.ttf",
+    src: "Inter-Regular.ttf",
+}
+
+prebuilt_font {
+    name: "Inter-Italic.ttf",
+    src: "Inter-Italic.ttf",
+}
+
+prebuilt_font {
+    name: "Inter-Medium.ttf",
+    src: "Inter-Medium.ttf",
+}
+
+prebuilt_font {
+    name: "Inter-MediumItalic.ttf",
+    src: "Inter-MediumItalic.ttf",
+}
+
+prebuilt_font {
+    name: "Inter-Bold.ttf",
+    src: "Inter-Bold.ttf",
+}
+
+prebuilt_font {
+    name: "Inter-BoldItalic.ttf",
+    src: "Inter-BoldItalic.ttf",
+}
+
+filegroup {
+    name: "Inter",
+    srcs: ["font_config.json"],
+    required: [
+        "Inter-Regular.ttf",
+        "Inter-Italic.ttf",
+        "Inter-Medium.ttf",
+        "Inter-MediumItalic.ttf",
+        "Inter-Bold.ttf",
+        "Inter-BoldItalic.ttf",
+    ],
+}

@@ -1,0 +1,37 @@
+[
+    {
+        "name": "inter",
+        "fonts": [
+            {
+                "file": "Inter-Regular.ttf",
+                "weight": "400",
+                "style": "normal"
+            },
+            {
+                "file": "Inter-Italic.ttf",
+                "weight": "400",
+                "style": "italic"
+            },
+            {
+                "file": "Inter-Medium.ttf",
+                "weight": "500",
+                "style": "normal"
+            },
+            {
+                "file": "Inter-MediumItalic.ttf",
+                "weight": "500",
+                "style": "italic"
+            },
+            {
+                "file": "Inter-Bold.ttf",
+                "weight": "700",
+                "style": "normal"
+            },
+            {
+                "file": "Inter-BoldItalic.ttf",
+                "weight": "700",
+                "style": "italic"
+            }
+        ]
+    }
+]
