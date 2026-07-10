@@ -32,4 +32,18 @@ object FirewallController {
             Log.e(TAG, "Errore updateRule", e)
         }
     }
+
+    /**
+     * Abilita o disabilita l'accesso alla rete per un determinato UID.
+     * Utilizza il servizio di sistema CDNOS Firewall.
+     */
+    fun setAppBlocked(context: Context, packageName: String, uid: Int, blocked: Boolean) {
+        val rule = getRule(context, packageName) ?: com.cdnos.firewall.FirewallRule().apply {
+            this.packageName = packageName
+            this.uid = uid
+        }
+        rule.wifiAllowed = !blocked
+        rule.mobileAllowed = !blocked
+        updateRule(context, rule)
+    }
 }

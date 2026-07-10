@@ -20,7 +20,7 @@ class FirewallBootReceiver : BroadcastReceiver() {
             apps.forEach { app ->
                 // Se l'app era bloccata nelle preferenze, riapplichiamo la regola tramite il servizio
                 if (prefs.getBoolean(app.packageName, false)) {
-                    FirewallController.setAppBlocked(context, app.uid, true)
+                    FirewallController.setAppBlocked(context, app.packageName, app.uid, true)
                 }
             }
         }

@@ -49,7 +49,7 @@ class FirewallFragment : Fragment() {
         val installedApps = pm.getInstalledApplications(PackageManager.GET_META_DATA)
         
         val firewallApps = installedApps
-            .filter { (it.flags & ApplicationInfo.FLAG_SYSTEM) == 0 }
+            .filter { (it.flags and ApplicationInfo.FLAG_SYSTEM) == 0 }
             .map { appInfo ->
                 val rule = FirewallController.getRule(requireContext(), appInfo.packageName)
                     ?: com.cdnos.firewall.FirewallRule().apply { 
