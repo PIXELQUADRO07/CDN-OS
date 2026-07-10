@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_dashboard_to_network"
             app:destination="@id/networkFragment" />
+        <action
+            android:id="@+id/action_dashboard_to_selinux"
+            app:destination="@id/selinuxFragment" />
     </fragment>
 
     <fragment
@@ -38,4 +41,10 @@
         android:name="org.cdnos.privacy.NetworkFragment"
         android:label="Network"
         tools:layout="@layout/fragment_network" />
+
+    <fragment
+        android:id="@+id/selinuxFragment"
+        android:name="org.cdnos.privacy.SelinuxFragment"
+        android:label="SELinux"
+        tools:layout="@layout/fragment_selinux" />
 </navigation>

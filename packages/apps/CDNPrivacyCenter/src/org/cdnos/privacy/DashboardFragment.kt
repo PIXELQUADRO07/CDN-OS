@@ -35,7 +35,7 @@ class DashboardFragment : Fragment() {
         }
 
         view.findViewById<MaterialCardView>(R.id.card_selinux).setOnClickListener {
-            showFeatureNotImplemented("SELinux")
+            findNavController().navigate(R.id.action_dashboard_to_selinux)
         }
     }
 
