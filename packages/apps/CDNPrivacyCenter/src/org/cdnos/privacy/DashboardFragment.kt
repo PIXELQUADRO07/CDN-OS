@@ -27,7 +27,7 @@ class DashboardFragment : Fragment() {
         }
 
         view.findViewById<MaterialCardView>(R.id.card_permissions).setOnClickListener {
-            showFeatureNotImplemented("Permissions")
+            findNavController().navigate(R.id.action_dashboard_to_permissions)
         }
 
         view.findViewById<MaterialCardView>(R.id.card_network).setOnClickListener {

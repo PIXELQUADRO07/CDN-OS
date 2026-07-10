@@ -13,11 +13,20 @@
         <action
             android:id="@+id/action_dashboard_to_firewall"
             app:destination="@id/firewallFragment" />
+        <action
+            android:id="@+id/action_dashboard_to_permissions"
+            app:destination="@id/permissionsFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/firewallFragment"
         android:name="org.cdnos.privacy.FirewallFragment"
         android:label="Firewall"
-        tools:layout="@layout/fragment_placeholder" />
+        tools:layout="@layout/fragment_firewall" />
+
+    <fragment
+        android:id="@+id/permissionsFragment"
+        android:name="org.cdnos.privacy.PermissionsFragment"
+        android:label="Permissions"
+        tools:layout="@layout/fragment_permissions" />
 </navigation>
