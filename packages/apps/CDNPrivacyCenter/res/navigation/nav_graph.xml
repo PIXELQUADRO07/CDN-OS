@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_dashboard_to_permissions"
             app:destination="@id/permissionsFragment" />
+        <action
+            android:id="@+id/action_dashboard_to_network"
+            app:destination="@id/networkFragment" />
     </fragment>
 
     <fragment
@@ -29,4 +32,10 @@
         android:name="org.cdnos.privacy.PermissionsFragment"
         android:label="Permissions"
         tools:layout="@layout/fragment_permissions" />
+
+    <fragment
+        android:id="@+id/networkFragment"
+        android:name="org.cdnos.privacy.NetworkFragment"
+        android:label="Network"
+        tools:layout="@layout/fragment_network" />
 </navigation>

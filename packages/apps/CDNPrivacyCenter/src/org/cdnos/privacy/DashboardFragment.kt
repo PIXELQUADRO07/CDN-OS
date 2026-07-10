@@ -31,7 +31,7 @@ class DashboardFragment : Fragment() {
         }
 
         view.findViewById<MaterialCardView>(R.id.card_network).setOnClickListener {
-            showFeatureNotImplemented("Network")
+            findNavController().navigate(R.id.action_dashboard_to_network)
         }
 
         view.findViewById<MaterialCardView>(R.id.card_selinux).setOnClickListener {
