@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="org.cdnos.privacy.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboard_to_firewall"
+            app:destination="@id/firewallFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/firewallFragment"
+        android:name="org.cdnos.privacy.FirewallFragment"
+        android:label="Firewall"
+        tools:layout="@layout/fragment_placeholder" />
+</navigation>

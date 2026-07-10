@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CDN Privacy</string>
+    <string name="app_summary">Firewall, SELinux and Security tools</string>
+
+    <string name="security_score_title">Security score</string>
+    <string name="security_score_value">94 / 100</string>
+    <string name="status_enforcing">Enforcing</string>
+
+    <string name="firewall_title">Firewall</string>
+    <string name="firewall_summary">24 regole attive</string>
+
+    <string name="permissions_title">Permessi</string>
+    <string name="permissions_summary">3 accessi oggi</string>
+
+    <string name="network_title">Rete</string>
+    <string name="network_summary">DNS CDN attivo</string>
+
+    <string name="selinux_title">SELinux</string>
+    <string name="selinux_summary">Enforcing</string>
+</resources>

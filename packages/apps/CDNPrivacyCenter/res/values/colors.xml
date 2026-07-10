@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#000000</color>
+    <color name="primaryLightColor">#2c2c2c</color>
+    <color name="primaryDarkColor">#000000</color>
+    <color name="secondaryColor">#B00020</color> <!-- Red -->
+    <color name="secondaryLightColor">#e91e63</color>
+    <color name="secondaryDarkColor">#790000</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="secondaryTextColor">#b0b0b0</color>
+
+    <color name="background">#000000</color>
+    <color name="surface">#121212</color>
+    <color name="error">#cf6679</color>
+
+    <color name="card_background">#1e1e1e</color>
+    <color name="accent_red">#FF0000</color>
+</resources>

@@ -1,0 +1,44 @@
+android_app {
+    name: "CDNPrivacyCenter",
+
+    srcs: [
+        "src/**/*.kt",
+    ],
+
+    resource_dirs: [
+        "res",
+    ],
+
+    manifest: "AndroidManifest.xml",
+
+    platform_apis: true,
+    certificate: "platform",
+    privileged: true,
+    system_ext_specific: true,
+
+    static_libs: [
+        "androidx.core_core-ktx",
+        "androidx.appcompat_appcompat",
+        "androidx.fragment_fragment-ktx",
+        "androidx-constraintlayout_constraintlayout",
+        "com.google.android.material_material",
+        "androidx.lifecycle_lifecycle-viewmodel-ktx",
+        "androidx.lifecycle_lifecycle-livedata-ktx",
+        "androidx.navigation_navigation-fragment-ktx",
+        "androidx.navigation_navigation-ui-ktx",
+    ],
+
+    optimize: {
+        enabled: false,
+    },
+
+    kotlincflags: ["-Xjvm-default=all"],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-CDNPrivacyCenter",
+    src: "privapp-permissions-CDNPrivacyCenter.xml",
+    sub_dir: "permissions",
+    filename_from_src: true,
+    system_ext_specific: true,
+}

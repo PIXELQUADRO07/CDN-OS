@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="org.cdnos.privacy">
+        <!-- Add privileged permissions here as implemented -->
+    </privapp-permissions>
+</permissions>
