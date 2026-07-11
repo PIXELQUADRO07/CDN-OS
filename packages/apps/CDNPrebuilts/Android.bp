@@ -4,6 +4,7 @@ android_app_import {
     presigned: true,
     preprocessed: true,
     skip_preprocessed_apk_checks: true,
+    enforce_uses_libs: false,
     privileged: false,
     product_specific: true,
 }
@@ -14,6 +15,7 @@ android_app_import {
     presigned: true,
     preprocessed: true,
     skip_preprocessed_apk_checks: true,
+    enforce_uses_libs: false,
     privileged: false,
     product_specific: true,
 }
@@ -24,6 +26,7 @@ android_app_import {
     presigned: true,
     preprocessed: true,
     skip_preprocessed_apk_checks: true,
+    enforce_uses_libs: false,
     privileged: false,
     product_specific: true,
 }
