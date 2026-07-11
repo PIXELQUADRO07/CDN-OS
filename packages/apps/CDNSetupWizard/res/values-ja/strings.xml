@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CDNOS セットアップ</string>
+
+    <!-- 共通ナビゲーション -->
+    <string name="btn_next">次へ</string>
+    <string name="btn_skip">スキップ</string>
+    <string name="btn_start">開始</string>
+    <string name="btn_finish">開始</string>
+    <string name="btn_connect">接続</string>
+    <string name="btn_cancel">キャンセル</string>
+    <string name="btn_apply">適用</string>
+
+    <!-- バージョン -->
+    <string name="os_version_android">Android 17</string>
+    <string name="os_version_cdnos">CDNOS 1.0</string>
+    <string name="welcome_title">CDNOS</string>
+    <string name="welcome_subtitle">Built for freedom.</string>
+
+    <!-- 第2ページ — 地域 -->
+    <string name="region_title">言語と地域</string>
+    <string name="region_subtitle">システムの地域設定を構成する</string>
+    <string name="region_language">言語</string>
+    <string name="region_region">地域</string>
+    <string name="region_keyboard">キーボード</string>
+    <string name="region_timezone">タイムゾーン</string>
+    <string name="region_time_24h">24時間表示</string>
+
+    <!-- 第6ページ — アプリケーション -->
+    <string name="apps_title">推奨アプリケーション</string>
+    <string name="apps_subtitle">インストールするアプリを選択してください</string>
+    <string name="apps_magisk_desc">Magisk Managerアプリをインストールします。これにより自動的にrootが有効になるわけではありません。root権限を取得するには、初期セットアップ後に別途手順が必要です。</string>
+    <string name="apps_install_note">選択したアプリはウィザードの最後にインストールされます。</string>
+
+    <!-- 第9ページ — 終了 -->
+    <string name="finish_title">デバイスの準備が完了しました。</string>
+    <string name="finish_subtitle">CDNOSへようこそ。</string>
+    <string name="finish_installing">アプリをインストールしています…</string>
+</resources>

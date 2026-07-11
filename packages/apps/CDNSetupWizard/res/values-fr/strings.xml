@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Configuration de CDNOS</string>
+
+    <!-- Navigation commune -->
+    <string name="btn_next">Continuer</string>
+    <string name="btn_skip">Passer</string>
+    <string name="btn_start">Commencer</string>
+    <string name="btn_finish">Commencer</string>
+    <string name="btn_connect">Connecter</string>
+    <string name="btn_cancel">Annuler</string>
+    <string name="btn_apply">Appliquer</string>
+
+    <!-- Versions -->
+    <string name="os_version_android">Android 17</string>
+    <string name="os_version_cdnos">CDNOS 1.0</string>
+    <string name="welcome_title">CDNOS</string>
+    <string name="welcome_subtitle">Built for freedom.</string>
+
+    <!-- Page 2 — Région -->
+    <string name="region_title">Région et Langue</string>
+    <string name="region_subtitle">Configurez les préférences locales du système</string>
+    <string name="region_language">Langue</string>
+    <string name="region_region">Région</string>
+    <string name="region_keyboard">Clavier</string>
+    <string name="region_timezone">Fuseau horaire</string>
+    <string name="region_time_24h">24 heures</string>
+
+    <!-- Page 6 — Applications -->
+    <string name="apps_title">Applications recommandées</string>
+    <string name="apps_subtitle">Sélectionnez les applications à installer</string>
+    <string name="apps_magisk_desc">Installe l\'application Magisk Manager. Cela n\'active pas automatiquement le root. Pour obtenir les privilèges root, une procédure distincte sera requise après la configuration initiale.</string>
+    <string name="apps_install_note">Les applications sélectionnées seront installées à la fin de l\'assistant.</string>
+
+    <!-- Page 9 — Fin -->
+    <string name="finish_title">Votre appareil est prêt.</string>
+    <string name="finish_subtitle">Bienvenue sur CDNOS.</string>
+    <string name="finish_installing">Installation des applications…</string>
+</resources>

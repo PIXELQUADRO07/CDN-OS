@@ -2,117 +2,139 @@
 <resources>
     <string name="app_name">CDNOS Setup</string>
 
-    <!-- Navigazione comune -->
-    <string name="btn_next">Continua</string>
-    <string name="btn_skip">Salta</string>
-    <string name="btn_start">Inizia</string>
-    <string name="btn_finish">Inizia</string>
-    <string name="btn_connect">Connetti</string>
-    <string name="btn_cancel">Annulla</string>
-    <string name="btn_apply">Applica</string>
+    <!-- Common Navigation -->
+    <string name="btn_next">Continue</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_finish">Start</string>
+    <string name="btn_connect">Connect</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_apply">Apply</string>
 
-    <!-- Versioni (page 1) -->
+    <!-- Versions (page 1) -->
     <string name="os_version_android">Android 17</string>
     <string name="os_version_cdnos">CDNOS 1.0</string>
     <string name="welcome_title">CDNOS</string>
     <string name="welcome_subtitle">Built for freedom.</string>
 
-    <!-- Pagina 2 — Regione -->
-    <string name="region_title">Regione e Lingua</string>
-    <string name="region_subtitle">Configura le preferenze locali del sistema</string>
-    <string name="region_language">Lingua</string>
-    <string name="region_region">Regione</string>
-    <string name="region_keyboard">Tastiera</string>
-    <string name="region_keyboard_layout">Layout tastiera</string>
-    <string name="region_timezone">Fuso orario</string>
-    <string name="region_date_format">Formato data</string>
-    <string name="region_time_format">Formato ora</string>
-    <string name="region_units">Unità di misura</string>
-    <string name="region_time_12h">12 ore (AM/PM)</string>
-    <string name="region_time_24h">24 ore</string>
-    <string name="region_units_metric">Metrico (km, °C)</string>
-    <string name="region_units_imperial">Imperiale (mi, °F)</string>
+    <!-- Page 2 — Region -->
+    <string name="region_title">Region and Language</string>
+    <string name="region_subtitle">Configure local system preferences</string>
+    <string name="region_language">Language</string>
+    <string name="region_region">Region</string>
+    <string name="region_keyboard">Keyboard</string>
+    <string name="region_keyboard_layout">Keyboard layout</string>
+    <string name="region_timezone">Time zone</string>
+    <string name="region_date_format">Date format</string>
+    <string name="region_time_format">Time format</string>
+    <string name="region_units">Units of measure</string>
+    <string name="region_time_12h">12 hours (AM/PM)</string>
+    <string name="region_time_24h">24 hours</string>
+    <string name="region_units_metric">Metric (km, °C)</string>
+    <string name="region_units_imperial">Imperial (mi, °F)</string>
 
-    <!-- Pagina 3 — Rete -->
-    <string name="network_title">Connessione di rete</string>
-    <string name="network_subtitle">Connetti il dispositivo a Internet</string>
+    <!-- Page 3 — Network -->
+    <string name="network_title">Network Connection</string>
+    <string name="network_subtitle">Connect your device to the Internet</string>
     <string name="network_wifi">Wi-Fi</string>
-    <string name="network_mobile">Dati mobili</string>
+    <string name="network_mobile">Mobile data</string>
     <string name="network_ethernet">Ethernet</string>
-    <string name="network_scanning">Ricerca reti in corso…</string>
-    <string name="network_no_networks">Nessuna rete trovata</string>
+    <string name="network_scanning">Scanning for networks…</string>
+    <string name="network_no_networks">No networks found</string>
     <string name="network_password_hint">Password</string>
-    <string name="network_password_title">Connetti a %s</string>
-    <string name="network_connected">Connesso</string>
-    <string name="network_connecting">Connessione in corso…</string>
-    <string name="network_secured">Protetta</string>
-    <string name="network_open">Aperta</string>
-    <string name="network_mobile_enabled">Dati mobili attivati</string>
-    <string name="network_mobile_disabled">Dati mobili disattivati</string>
-    <string name="network_mobile_unavailable">SIM non rilevata</string>
-    <string name="network_ethernet_available">Ethernet disponibile</string>
-    <string name="network_ethernet_unavailable">Ethernet non disponibile</string>
+    <string name="network_password_title">Connect to %s</string>
+    <string name="network_connected">Connected</string>
+    <string name="network_connecting">Connecting…</string>
+    <string name="network_secured">Secured</string>
+    <string name="network_open">Open</string>
+    <string name="network_mobile_enabled">Mobile data enabled</string>
+    <string name="network_mobile_disabled">Mobile data disabled</string>
+    <string name="network_mobile_unavailable">SIM not detected</string>
+    <string name="network_ethernet_available">Ethernet available</string>
+    <string name="network_ethernet_unavailable">Ethernet not available</string>
 
-    <!-- Pagina 4 — Privacy -->
+    <!-- Page 4 — Privacy -->
     <string name="privacy_title">Privacy</string>
-    <string name="privacy_subtitle">Scegli il livello di protezione per il tuo dispositivo</string>
-    <string name="privacy_mode_standard">Modalità Standard</string>
-    <string name="privacy_mode_balanced">Modalità Bilanciata</string>
-    <string name="privacy_mode_maximum">Modalità Massima</string>
-    <string name="privacy_mode_standard_desc">Esperienza completa. Diagnostica e analisi abilitate per migliorare il sistema.</string>
-    <string name="privacy_mode_balanced_desc">Bilanciamento tra funzionalità e privacy. Raccolta dati limitata ai report di crash.</string>
-    <string name="privacy_mode_maximum_desc">Privacy assoluta. Nessuna telemetria, nessun tracciamento. Alcune funzionalità potrebbero essere limitate.</string>
-    <string name="privacy_feature_telemetry">Telemetria di sistema</string>
-    <string name="privacy_feature_crash_reports">Report di crash</string>
-    <string name="privacy_feature_location">Geolocalizzazione di sistema</string>
+    <string name="privacy_subtitle">Choose the protection level for your device</string>
+    <string name="privacy_mode_standard">Standard Mode</string>
+    <string name="privacy_mode_balanced">Balanced Mode</string>
+    <string name="privacy_mode_maximum">Maximum Mode</string>
+    <string name="privacy_mode_standard_desc">Full experience. Diagnostics and analysis enabled to improve the system.</string>
+    <string name="privacy_mode_balanced_desc">Balance between functionality and privacy. Data collection limited to crash reports.</string>
+    <string name="privacy_mode_maximum_desc">Absolute privacy. No telemetry, no tracking. Some features may be limited.</string>
+    <string name="privacy_feature_telemetry">System Telemetry</string>
+    <string name="privacy_feature_crash_reports">Crash Reports</string>
+    <string name="privacy_feature_location">System Geolocation</string>
     <string name="privacy_feature_ads_id">Advertising ID</string>
-    <string name="privacy_feature_usage_stats">Statistiche utilizzo app</string>
+    <string name="privacy_feature_usage_stats">App usage statistics</string>
 
-    <!-- Pagina 5 — Servizi Google -->
-    <string name="google_title">Servizi Google</string>
-    <string name="google_subtitle">Quale esperienza desideri?</string>
-    <string name="google_none">Nessun servizio Google</string>
+    <!-- Page 5 — Google Services -->
+    <string name="google_title">Google Services</string>
+    <string name="google_subtitle">Which experience do you want?</string>
+    <string name="google_none">No Google services</string>
     <string name="google_microg">microG</string>
     <string name="google_gapps">Google Play Services</string>
-    <string name="google_none_desc">Massima privacy e libertà. Usa F-Droid e Aurora Store per le app. Alcune funzioni di sistema potrebbero non essere disponibili.</string>
-    <string name="google_microg_desc">Implementazione open source dei servizi Google. Compatibilità con la maggior parte delle app senza dipendere da Google.</string>
-    <string name="google_gapps_desc">Piena compatibilità con l\'ecosistema Google. Google Play Store, notifiche push e tutti i servizi Google disponibili.</string>
-    <string name="google_warning_gapps">Richiede riavvio del sistema per completare l\'installazione.</string>
+    <string name="google_none_desc">Maximum privacy and freedom. Use F-Droid and Aurora Store for apps. Some system features may not be available.</string>
+    <string name="google_microg_desc">Open source implementation of Google services. Compatibility with most apps without depending on Google.</string>
+    <string name="google_gapps_desc">Full compatibility with the Google ecosystem. Google Play Store, push notifications, and all Google services available.</string>
+    <string name="google_warning_gapps">Requires a system restart to complete installation.</string>
 
-    <!-- Pagina 6 — Applicazioni -->
-    <string name="apps_title">Applicazioni consigliate</string>
-    <string name="apps_subtitle">Seleziona le app da installare al termine del setup</string>
-    <string name="apps_fdroid_desc">Il market open source per Android. Migliaia di app libere e gratuite.</string>
-    <string name="apps_aurora_desc">Client alternativo per il Google Play Store. Scarica app senza un account Google.</string>
-    <string name="apps_magisk_desc">Framework di root avanzato. Richiede modifiche all\'immagine di boot — configurabile dopo il setup.</string>
-    <string name="apps_neostore_desc">Client moderno per F-Droid con interfaccia Material You.</string>
-    <string name="apps_termux_desc">Terminale Linux completo per Android. Strumento potente per sviluppatori.</string>
-    <string name="apps_requires_root">Richiede root</string>
-    <string name="apps_install_note">Le app selezionate verranno installate al termine del wizard.</string>
+    <!-- Page 6 — Applications -->
+    <string name="apps_title">Recommended Applications</string>
+    <string name="apps_subtitle">Select apps to install at the end of setup</string>
+    <string name="apps_fdroid_desc">The open source market for Android. Thousands of free and open apps.</string>
+    <string name="apps_aurora_desc">Alternative client for the Google Play Store. Download apps without a Google account.</string>
+    <string name="apps_magisk_desc">Installs the Magisk Manager app. This does not automatically enable root. To obtain root privileges, a separate procedure will be required after the initial setup.</string>
+    <string name="apps_neostore_desc">Modern client for F-Droid with Material You interface.</string>
+    <string name="apps_termux_desc">Full Linux terminal for Android. Powerful tool for developers.</string>
+    <string name="apps_requires_root">Requires root</string>
+    <string name="apps_install_note">Selected apps will be installed at the end of the wizard.</string>
 
-    <!-- Pagina 7 — Sicurezza -->
-    <string name="security_title">Sicurezza</string>
-    <string name="security_subtitle">Configura la protezione del sistema</string>
+    <!-- Page 7 — Security -->
+    <string name="security_title">Security</string>
+    <string name="security_subtitle">Configure system protection</string>
     <string name="security_firewall">Firewall</string>
-    <string name="security_firewall_desc">Blocca connessioni non autorizzate in entrata e uscita.</string>
+    <string name="security_firewall_desc">Blocks unauthorized incoming and outgoing connections.</string>
     <string name="security_doh">DNS over HTTPS</string>
-    <string name="security_doh_desc">Cifra le query DNS per proteggere la navigazione da intercettazioni.</string>
+    <string name="security_doh_desc">Encrypts DNS queries to protect browsing from eavesdropping.</string>
     <string name="security_private_dns">Private DNS</string>
-    <string name="security_private_dns_desc">Usa un server DNS privato invece di quello del provider.</string>
-    <string name="security_vpn">VPN automatica</string>
-    <string name="security_vpn_desc">Attiva automaticamente una VPN all\'avvio. Richiede configurazione separata.</string>
+    <string name="security_private_dns_desc">Use a private DNS server instead of the provider\'s.</string>
+    <string name="security_vpn">Automatic VPN</string>
+    <string name="security_vpn_desc">Automatically activates a VPN on startup. Requires separate configuration.</string>
 
-    <!-- Pagina 8 — Account -->
-    <string name="account_title">Account CDNOS</string>
-    <string name="account_subtitle">Un account CDNOS ti permette di sincronizzare backup, ricevere aggiornamenti OTA e accedere ai servizi cloud.</string>
-    <string name="account_yes">Crea un account CDNOS</string>
-    <string name="account_no">Continua senza account</string>
-    <string name="account_coming_soon">Disponibile nella prossima versione di CDNOS.</string>
-    <string name="account_email_hint">Indirizzo email</string>
+    <!-- Page 8 — Account -->
+    <string name="account_title">CDNOS Account</string>
+    <string name="account_subtitle">A CDNOS account allows you to sync backups, receive OTA updates, and access cloud services.</string>
+    <string name="account_yes">Create a CDNOS account</string>
+    <string name="account_no">Continue without account</string>
+    <string name="account_coming_soon">Available in the next version of CDNOS.</string>
+    <string name="account_email_hint">Email address</string>
     <string name="account_password_hint">Password</string>
 
-    <!-- Pagina 9 — Fine -->
-    <string name="finish_title">Il tuo dispositivo è pronto.</string>
-    <string name="finish_subtitle">Benvenuto in CDNOS.</string>
-    <string name="finish_installing">Installazione app in corso…</string>
+    <!-- Summary Page -->
+    <string name="summary_title">Summary</string>
+    <string name="summary_confirm">Confirm and Start</string>
+    <string name="summary_language">Language</string>
+    <string name="summary_region">Region</string>
+    <string name="summary_wifi">Wi-Fi</string>
+    <string name="summary_theme">Theme</string>
+    <string name="summary_firewall">Firewall</string>
+    <string name="summary_dns">DNS</string>
+    <string name="summary_apps">Apps</string>
+    <string name="summary_none">None</string>
+
+    <!-- Applying Page -->
+    <string name="applying_title">System configuration</string>
+    <string name="applying_status_init">Initializing...</string>
+    <string name="applying_status_lang">Applying language and region...</string>
+    <string name="applying_status_time">Configuring date and time...</string>
+    <string name="applying_status_network">Configuring DNS and network...</string>
+    <string name="applying_status_theme">Applying theme...</string>
+    <string name="applying_status_firewall">Configuring firewall...</string>
+    <string name="applying_status_apps">Configuring system applications...</string>
+
+    <!-- Page 9 — Finish -->
+    <string name="finish_title">Your device is ready.</string>
+    <string name="finish_subtitle">Welcome to CDNOS.</string>
+    <string name="finish_installing">Installing apps…</string>
 </resources>
