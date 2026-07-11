@@ -2,9 +2,7 @@ android_app_import {
     name: "AuroraStore",
     apk: "apks/AuroraStore.apk",
     presigned: true,
-    dex_preopt: {
-        enabled: false,
-    },
+    preprocessed: true,
     privileged: false,
     product_specific: true,
 }
@@ -13,9 +11,7 @@ android_app_import {
     name: "FDroid",
     apk: "apks/FDroid.apk",
     presigned: true,
-    dex_preopt: {
-        enabled: false,
-    },
+    preprocessed: true,
     privileged: false,
     product_specific: true,
 }
@@ -24,9 +20,7 @@ android_app_import {
     name: "Magisk",
     apk: "apks/Magisk.apk",
     presigned: true,
-    dex_preopt: {
-        enabled: false,
-    },
+    preprocessed: true,
     privileged: false,
     product_specific: true,
 }
