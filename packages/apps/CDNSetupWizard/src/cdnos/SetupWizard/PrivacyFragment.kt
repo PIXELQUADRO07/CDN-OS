@@ -1,6 +1,8 @@
 package cdnos.setupwizard
 
 import android.os.Bundle
+import android.os.SystemProperties
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,8 +19,7 @@ import androidx.fragment.app.Fragment
  * - Bilanciata: solo crash report, location opzionale
  * - Massima: nessuna raccolta dati
  *
- * La selezione viene salvata in system property persist.cdnos.privacy_mode
- * e applicata da un servizio di sistema al boot successivo.
+ * La selezione viene salvata tramite SystemProperties in persist.cdnos.privacy_mode.
  */
 class PrivacyFragment : Fragment() {
 
@@ -86,11 +87,13 @@ class PrivacyFragment : Fragment() {
     private fun applyPrivacyMode() {
         val modeValue = selectedMode.name.lowercase()
         try {
-            ProcessBuilder("setprop", "persist.cdnos.privacy_mode", modeValue).start()
+            SystemProperties.set("persist.cdnos.privacy_mode", modeValue)
+            Log.i("CDNSetupWizard", "Privacy mode impostata a: $modeValue")
         } catch (e: Exception) {
-            android.util.Log.w("CDNSetupWizard", "Impossibile scrivere persist.cdnos.privacy_mode", e)
+            Log.w("CDNSetupWizard", "Impossibile scrivere persist.cdnos.privacy_mode", e)
         }
     }
 
     enum class PrivacyMode { STANDARD, BALANCED, MAXIMUM }
 }
+

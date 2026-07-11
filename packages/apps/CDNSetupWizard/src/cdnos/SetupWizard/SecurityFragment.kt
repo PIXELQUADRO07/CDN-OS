@@ -1,7 +1,9 @@
 package cdnos.setupwizard
 
 import android.os.Bundle
+import android.os.SystemProperties
 import android.provider.Settings
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,9 +19,6 @@ import com.google.android.material.switchmaterial.SwitchMaterial
  * - DNS over HTTPS: scrive Settings.Global.PRIVATE_DNS_MODE
  * - Private DNS: scrive Settings.Global.PRIVATE_DNS_SPECIFIER
  * - VPN automatica: imposta system property persist.cdnos.auto_vpn
- *
- * Il firewall reale viene configurato da un servizio di sistema
- * che legge le properties all'avvio.
  */
 class SecurityFragment : Fragment() {
 
@@ -56,37 +55,38 @@ class SecurityFragment : Fragment() {
     ) {
         val cr = requireContext().contentResolver
 
-        // Firewall — system property letta dal servizio di sistema
-        setProp("persist.cdnos.firewall", if (firewall) "1" else "0")
+        // Firewall — tramite SystemProperties
+        try {
+            SystemProperties.set("persist.cdnos.firewall", if (firewall) "1" else "0")
+        } catch (e: Exception) {
+            Log.w("CDNSetupWizard", "Impossibile scrivere persist.cdnos.firewall", e)
+        }
 
         // DNS over HTTPS — abilita Private DNS in modalità opportunistica
         if (doh) {
             try {
-                Settings.Global.putString(cr, "private_dns_mode", "opportunistic")
+                Settings.Global.putString(cr, Settings.Global.PRIVATE_DNS_MODE, "opportunistic")
             } catch (e: Exception) {
-                android.util.Log.w("CDNSetupWizard", "Impossibile scrivere private_dns_mode", e)
+                Log.w("CDNSetupWizard", "Impossibile scrivere private_dns_mode", e)
             }
         }
 
         // Private DNS — specifica hostname del server DNS privato
         if (privateDns) {
             try {
-                Settings.Global.putString(cr, "private_dns_mode", "hostname")
-                Settings.Global.putString(cr, "private_dns_specifier", "dns.quad9.net")
+                Settings.Global.putString(cr, Settings.Global.PRIVATE_DNS_MODE, "hostname")
+                Settings.Global.putString(cr, Settings.Global.PRIVATE_DNS_SPECIFIER, "dns.quad9.net")
             } catch (e: Exception) {
-                android.util.Log.w("CDNSetupWizard", "Impossibile scrivere private_dns_specifier", e)
+                Log.w("CDNSetupWizard", "Impossibile scrivere private_dns_specifier", e)
             }
         }
 
-        // VPN automatica
-        setProp("persist.cdnos.auto_vpn", if (autoVpn) "1" else "0")
-    }
-
-    private fun setProp(key: String, value: String) {
+        // VPN automatica — tramite SystemProperties
         try {
-            ProcessBuilder("setprop", key, value).start()
+            SystemProperties.set("persist.cdnos.auto_vpn", if (autoVpn) "1" else "0")
         } catch (e: Exception) {
-            android.util.Log.w("CDNSetupWizard", "Impossibile scrivere $key=$value", e)
+            Log.w("CDNSetupWizard", "Impossibile scrivere persist.cdnos.auto_vpn", e)
         }
     }
 }
+

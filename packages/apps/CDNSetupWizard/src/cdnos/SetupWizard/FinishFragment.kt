@@ -1,6 +1,7 @@
 package cdnos.setupwizard
 
 import android.os.Bundle
+import android.os.SystemProperties
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -72,17 +73,11 @@ class FinishFragment : Fragment() {
     }
 
     /**
-     * Legge la lista delle app selezionate dalla system property
-     * impostata da AppsFragment.
+     * Legge la lista delle app selezionate dalla system property tramite SystemProperties.
      */
     private fun getAppsToInstall(): List<String> {
-        return try {
-            val process = ProcessBuilder("getprop", "persist.cdnos.install_apps").start()
-            val result = process.inputStream.bufferedReader().readLine() ?: ""
-            if (result.isBlank()) emptyList()
-            else result.split(",").filter { it.isNotBlank() }
-        } catch (e: Exception) {
-            emptyList()
-        }
+        val result = SystemProperties.get("persist.cdnos.install_apps", "")
+        return if (result.isBlank()) emptyList()
+        else result.split(",").filter { it.isNotBlank() }
     }
 }

@@ -1,10 +1,15 @@
 package cdnos.setupwizard
 
+import android.app.ActivityManager
 import android.app.AlarmManager
+import android.app.IActivityManager
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
+import android.os.LocaleList
+import android.os.SystemProperties
 import android.provider.Settings
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +18,7 @@ import android.widget.Button
 import android.widget.RadioButton
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import com.android.internal.app.LocalePicker
 import java.util.Locale
 import java.util.TimeZone
 
@@ -20,7 +26,7 @@ import java.util.TimeZone
  * Pagina 2 — Regione e Lingua
  *
  * Configura le preferenze locali del sistema usando le API Android native:
- * - Lingua → aggiorna la Configuration e la Locale di sistema
+ * - Lingua → aggiorna la Configuration di sistema tramite ActivityManager
  * - Regione → codice paese
  * - Tastiera → InputMethodManager (selezione IME)
  * - Fuso orario → AlarmManager.setTimeZone()
@@ -56,21 +62,11 @@ class RegionFragment : Fragment() {
     private fun setupLanguageSpinner(view: View) {
         val spinner = view.findViewById<Spinner>(R.id.spinner_language)
 
-        // Lista delle lingue più comuni — nome localizzato + tag IETF
-        val languages = listOf(
-            LanguageEntry("Italiano", "it-IT"),
-            LanguageEntry("English (US)", "en-US"),
-            LanguageEntry("English (UK)", "en-GB"),
-            LanguageEntry("Español", "es-ES"),
-            LanguageEntry("Français", "fr-FR"),
-            LanguageEntry("Deutsch", "de-DE"),
-            LanguageEntry("Português (BR)", "pt-BR"),
-            LanguageEntry("中文 (简体)", "zh-CN"),
-            LanguageEntry("日本語", "ja-JP"),
-            LanguageEntry("한국어", "ko-KR"),
-            LanguageEntry("Русский", "ru-RU"),
-            LanguageEntry("العربية", "ar-SA"),
-        )
+        // Ottieni tutte le lingue supportate dal sistema in modo dinamico
+        val systemLocales = LocalePicker.getAllAssetLocales(requireContext(), true)
+        val languages = systemLocales.map { info ->
+            LanguageEntry(info.label, info.locale)
+        }.sortedBy { it.display }
 
         val adapter = ArrayAdapter(
             requireContext(),
@@ -82,11 +78,10 @@ class RegionFragment : Fragment() {
 
         // Pre-seleziona la lingua corrente del sistema
         val currentLocale = Locale.getDefault()
-        val currentTag = currentLocale.toLanguageTag()
-        val idx = languages.indexOfFirst { it.tag.startsWith(currentLocale.language) }
+        val idx = languages.indexOfFirst { it.locale.language == currentLocale.language }
         if (idx >= 0) spinner.setSelection(idx)
 
-        // Salviamo i tag per usarli in applySettings
+        // Salviamo gli oggetti Locale per usarli in applySettings
         spinner.tag = languages
     }
 
@@ -199,11 +194,11 @@ class RegionFragment : Fragment() {
     private fun applySettings(view: View) {
         val ctx = requireContext()
 
-        // Applica lingua
+        // Applica lingua sistema
         val langSpinner = view.findViewById<Spinner>(R.id.spinner_language)
         val languages = langSpinner.tag as? List<LanguageEntry>
         languages?.getOrNull(langSpinner.selectedItemPosition)?.let { entry ->
-            applyLocale(entry.tag)
+            updateSystemLocale(entry.locale)
         }
 
         // Applica fuso orario
@@ -221,29 +216,24 @@ class RegionFragment : Fragment() {
             if (is24h) "24" else "12"
         )
 
-        // Applica unità di misura come system property
+        // Applica unità di misura tramite SystemProperties
         val isMetric = view.findViewById<RadioButton>(R.id.rb_metric).isChecked
         try {
-            val processBuilder = ProcessBuilder("setprop", "persist.sys.units",
-                if (isMetric) "metric" else "imperial")
-            processBuilder.start()
+            SystemProperties.set("persist.sys.units", if (isMetric) "metric" else "imperial")
         } catch (e: Exception) {
-            android.util.Log.w("CDNSetupWizard", "Impossibile scrivere persist.sys.units", e)
+            Log.w("CDNSetupWizard", "Impossibile scrivere persist.sys.units", e)
         }
     }
 
-    private fun applyLocale(languageTag: String) {
+    private fun updateSystemLocale(locale: Locale) {
         try {
-            val locale = Locale.forLanguageTag(languageTag)
-            Locale.setDefault(locale)
-
-            val config = Configuration(resources.configuration)
-            config.setLocale(locale)
-
-            @Suppress("DEPRECATION")
-            resources.updateConfiguration(config, resources.displayMetrics)
+            val am: IActivityManager = ActivityManager.getService()
+            val config: Configuration = am.configuration
+            config.setLocales(LocaleList(locale))
+            am.updatePersistentConfiguration(config)
+            Log.i("CDNSetupWizard", "Lingua di sistema impostata a: ${locale.toLanguageTag()}")
         } catch (e: Exception) {
-            android.util.Log.e("CDNSetupWizard", "Errore applicando la locale $languageTag", e)
+            Log.e("CDNSetupWizard", "Errore nell'aggiornamento della locale di sistema", e)
         }
     }
 
@@ -252,13 +242,14 @@ class RegionFragment : Fragment() {
             val alarmManager = ctx.getSystemService(Context.ALARM_SERVICE) as AlarmManager
             alarmManager.setTimeZone(timezoneId)
         } catch (e: Exception) {
-            android.util.Log.e("CDNSetupWizard", "Errore applicando il timezone $timezoneId", e)
+            Log.e("CDNSetupWizard", "Errore applicando il timezone $timezoneId", e)
         }
     }
 
     // ── Data classes helper ──────────────────────────────────────────────────
 
-    data class LanguageEntry(val display: String, val tag: String)
+    data class LanguageEntry(val display: String, val locale: Locale)
     data class RegionEntry(val display: String, val code: String)
     data class TimezoneEntry(val display: String, val id: String)
 }
+

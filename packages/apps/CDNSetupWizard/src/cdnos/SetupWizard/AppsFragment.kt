@@ -1,6 +1,8 @@
 package cdnos.setupwizard
 
 import android.os.Bundle
+import android.os.SystemProperties
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -99,9 +101,10 @@ class AppsFragment : Fragment() {
             .joinToString(",") { it.name }
 
         try {
-            ProcessBuilder("setprop", "persist.cdnos.install_apps", selected).start()
+            SystemProperties.set("persist.cdnos.install_apps", selected)
+            Log.i("CDNSetupWizard", "Lista app da installare salvata: $selected")
         } catch (e: Exception) {
-            android.util.Log.w("CDNSetupWizard", "Impossibile salvare la lista app", e)
+            Log.w("CDNSetupWizard", "Impossibile salvare la lista app", e)
         }
     }
 

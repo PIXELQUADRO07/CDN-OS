@@ -1,6 +1,8 @@
 package cdnos.setupwizard
 
 import android.os.Bundle
+import android.os.SystemProperties
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,8 +15,7 @@ import androidx.fragment.app.Fragment
  * Pagina 8 — Account CDNOS
  *
  * L'utente può scegliere se creare un account CDNOS o continuare senza.
- * La funzionalità account è pianificata per versioni future del sistema.
- * Per ora la scelta viene salvata in persist.cdnos.account_setup.
+ * La scelta viene salvata tramite SystemProperties in persist.cdnos.account_setup.
  */
 class AccountFragment : Fragment() {
 
@@ -59,12 +60,14 @@ class AccountFragment : Fragment() {
 
     private fun saveAccountPreference(wantsAccount: Boolean) {
         try {
-            ProcessBuilder(
-                "setprop", "persist.cdnos.account_setup",
+            SystemProperties.set(
+                "persist.cdnos.account_setup",
                 if (wantsAccount) "1" else "0"
-            ).start()
+            )
+            Log.i("CDNSetupWizard", "Account preference salvata: $wantsAccount")
         } catch (e: Exception) {
-            android.util.Log.w("CDNSetupWizard", "Impossibile salvare account preference", e)
+            Log.w("CDNSetupWizard", "Impossibile salvare account preference", e)
         }
     }
 }
+

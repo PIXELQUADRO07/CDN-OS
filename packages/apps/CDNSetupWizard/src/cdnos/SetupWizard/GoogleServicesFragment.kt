@@ -1,6 +1,8 @@
 package cdnos.setupwizard
 
 import android.os.Bundle
+import android.os.SystemProperties
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,9 +20,7 @@ import androidx.fragment.app.Fragment
  * - microG (sostituto open source dei Google Play Services)
  * - Google Play Services completo
  *
- * La scelta viene salvata in persist.cdnos.google_services.
- * L'effettiva installazione/abilitazione dei componenti viene
- * gestita da un service privilegiato separato che legge questa property.
+ * La scelta viene salvata tramite SystemProperties in persist.cdnos.google_services.
  */
 class GoogleServicesFragment : Fragment() {
 
@@ -81,11 +81,13 @@ class GoogleServicesFragment : Fragment() {
     private fun applyGoogleServices() {
         val value = selectedOption.name.lowercase()
         try {
-            ProcessBuilder("setprop", "persist.cdnos.google_services", value).start()
+            SystemProperties.set("persist.cdnos.google_services", value)
+            Log.i("CDNSetupWizard", "Google services impostati a: $value")
         } catch (e: Exception) {
-            android.util.Log.w("CDNSetupWizard", "Impossibile scrivere persist.cdnos.google_services", e)
+            Log.w("CDNSetupWizard", "Impossibile scrivere persist.cdnos.google_services", e)
         }
     }
 
     enum class GoogleOption { NONE, MICROG, GAPPS }
 }
+
