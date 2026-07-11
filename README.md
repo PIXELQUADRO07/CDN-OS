@@ -7,7 +7,7 @@ The goal of CDN OS is to provide a robust system that implements high-level secu
 
 ## Current Roadmap Status
 
-### 🔐 Phase 1: Kernel & System Level (Basso Livello) - IN PROGRESS
+### 🔐 Phase 1: Kernel & System Level (Low Level) - IN PROGRESS
 - [ ] Kernel Hardening (KSPP: CONFIG_SLAB_FREELIST_HARDENED, etc.)
 - [ ] CFI (Control-Flow Integrity) & Shadow Call Stack
 - [ ] SELinux strict policies
