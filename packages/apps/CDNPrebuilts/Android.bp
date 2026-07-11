@@ -3,6 +3,7 @@ android_app_import {
     apk: "apks/AuroraStore.apk",
     presigned: true,
     preprocessed: true,
+    skip_preprocessed_apk_checks: true,
     privileged: false,
     product_specific: true,
 }
@@ -12,6 +13,7 @@ android_app_import {
     apk: "apks/FDroid.apk",
     presigned: true,
     preprocessed: true,
+    skip_preprocessed_apk_checks: true,
     privileged: false,
     product_specific: true,
 }
@@ -21,6 +23,7 @@ android_app_import {
     apk: "apks/Magisk.apk",
     presigned: true,
     preprocessed: true,
+    skip_preprocessed_apk_checks: true,
     privileged: false,
     product_specific: true,
 }
