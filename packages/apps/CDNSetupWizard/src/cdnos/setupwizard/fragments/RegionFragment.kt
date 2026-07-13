@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import cdnos.setupwizard.R
@@ -28,6 +29,7 @@ class RegionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<TextView>(R.id.tv_page_label).text = "03 / 12"
+        val spinner = view.findViewById<Spinner>(R.id.spinner_region)
         
         // Nascondi tutto tranne regione
         view.findViewById<View>(R.id.spinner_language).visibility = View.GONE

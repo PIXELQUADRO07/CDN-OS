@@ -9,6 +9,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import cdnos.setupwizard.R
@@ -29,6 +30,7 @@ class KeyboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<TextView>(R.id.tv_page_label).text = "04 / 12"
+        val spinner = view.findViewById<Spinner>(R.id.spinner_keyboard)
         
         // Nascondi tutto tranne tastiera
         view.findViewById<View>(R.id.spinner_language).visibility = View.GONE

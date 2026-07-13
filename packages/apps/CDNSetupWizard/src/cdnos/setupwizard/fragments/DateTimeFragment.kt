@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.Spinner
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import cdnos.setupwizard.R
@@ -29,6 +30,7 @@ class DateTimeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<TextView>(R.id.tv_page_label).text = "06 / 12"
+        val spinner = view.findViewById<Spinner>(R.id.spinner_timezone)
         
         // Nascondi tutto tranne fuso orario e formato ora
         view.findViewById<View>(R.id.spinner_language).visibility = View.GONE

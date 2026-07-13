@@ -87,9 +87,7 @@ class SetupWizardActivity : AppCompatActivity() {
         if (page > 0) {
             transaction.setCustomAnimations(
                 R.anim.fragment_enter,
-                R.anim.fragment_exit,
-                R.anim.fragment_pop_enter,
-                R.anim.fragment_pop_exit
+                R.anim.fragment_exit
             )
         }
 
